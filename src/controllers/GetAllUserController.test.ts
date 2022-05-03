@@ -1,9 +1,9 @@
 import { GetAllUserController } from "../controllers/GetAllUserController"; 
 import  createConnection  from "../database";
-import {makeMockRequest} from "../utils/mocks/MockRequest"]
-import {makeMockResponse} from "../utils/mocks/MockResponse"
+import {makeMockRequest} from "../utils/mocks/MockRequest";
+import {makeMockResponse} from "../utils/mocks/MockResponse";
 import { getConnection } from "typeorm";
-import {FakeData} from "../utils/fakeData/fakeData"
+import {FakeData} from "../utils/fakeData/FakeData";
 
 describe('GetAllUserService', () => {
 
@@ -20,13 +20,21 @@ describe('GetAllUserService', () => {
 
     })
 
-    const fakeData = new Fakedata();
+    const fakeData = new FakeData();
 
     it('deve retornar o id do usuário criado ', async()=>{
 
        await fakeData.ex()
 
-       const GetAllUserController
+       const getAllUserController = new GetAllUserController();
+
+       const request = makeMockRequest({})
+
+       const response = makeMockResponse()
+
+       await getAllUserController.handle(request,response)
+       
+       expect(response.state.status).toBe(200)
     })
 
 })

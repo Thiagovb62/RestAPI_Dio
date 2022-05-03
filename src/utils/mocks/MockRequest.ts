@@ -3,7 +3,7 @@ import {Request } from 'express';
 import {Params } from 'express-serve-static-core';
 
  interface mockRequest {
-     params:Params;
+     params?:Params;
  }
 
  export function makeMockRequest({params}: mockRequest){

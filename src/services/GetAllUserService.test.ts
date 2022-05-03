@@ -1,7 +1,7 @@
 import { getConnection } from "typeorm";
 import  createConnection  from "../database";
 import{GetAllUserService} from "../services/GetAllUserService";
-import {FakeData} from "../utils/fakeData/fakeData";
+import {FakeData} from "../utils/fakeData/FakeData";
 
 describe('GetAllUserService', () => {
 
@@ -24,7 +24,6 @@ describe('GetAllUserService', () => {
 
         await fakeData.ex()
 
-   
         const expectedResponse = [
             {
                 name: 'algum usuario',
